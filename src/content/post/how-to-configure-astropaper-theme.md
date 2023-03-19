@@ -1,15 +1,13 @@
 ---
-author: Sat Naing
-pubDatetime: 2022-09-23T04:58:53Z
 title: How to configure AstroPaper theme
-postSlug: how-to-configure-astropaper-theme
-featured: true
-draft: false
+description: How you can make AstroPaper theme absolutely yours.
+created: 2022-09-23
 tags:
   - configuration
   - docs
-ogImage: ""
-description: How you can make AstroPaper theme absolutely yours.
+author: Sat Naing
+featured: true
+draft: false
 ---
 
 AstroPaper is a highly customizable Astro blog theme. With AstroPaper, you can customize everything according to your personal taste. This article will explain how you can make some customizations easily in the config file.

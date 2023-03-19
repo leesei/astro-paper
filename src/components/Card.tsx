@@ -1,14 +1,16 @@
-import Datetime from "./Datetime";
-import type { BlogFrontmatter } from "@content/_schemas";
+import Datetime from "@components/Datetime";
+import Tag from "@components/Tag";
+import type { PostFrontmatter } from "@content/_schemas";
+import { Fragment } from "react";
 
 export interface Props {
   href?: string;
-  frontmatter: BlogFrontmatter;
+  frontmatter: PostFrontmatter;
   secHeading?: boolean;
 }
 
 export default function Card({ href, frontmatter, secHeading = true }: Props) {
-  const { title, pubDatetime, description } = frontmatter;
+  const { title, created, description, tags } = frontmatter;
   return (
     <li className="my-6">
       <a
@@ -25,7 +27,14 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
           </h3>
         )}
       </a>
-      <Datetime datetime={pubDatetime} />
+      <Datetime datetime={created} />
+      <ul className="tags-container">
+        {tags.map(tag => (
+          <Fragment key={tag}>
+            <Tag name={tag} />
+          </Fragment>
+        ))}
+      </ul>
       <p>{description}</p>
     </li>
   );

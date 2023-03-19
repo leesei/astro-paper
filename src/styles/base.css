@@ -29,44 +29,44 @@
     display: block;
   }
   body {
-    @apply flex min-h-screen flex-col bg-skin-fill font-mono text-skin-base 
+    @apply flex min-h-screen flex-col bg-skin-fill font-mono text-skin-base
     selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
   }
   section,
   footer {
-    @apply mx-auto max-w-3xl px-4;
+    @apply mx-auto max-w-6xl px-4;
   }
   a {
-    @apply outline-2 outline-offset-1 outline-skin-fill 
+    @apply outline-2 outline-offset-1 outline-skin-fill
     focus-visible:no-underline focus-visible:outline-dashed;
   }
   svg {
     @apply inline-block h-6 w-6 fill-skin-base group-hover:fill-skin-accent;
   }
   svg.icon-tabler {
-    @apply inline-block h-6 w-6 scale-125 fill-transparent 
-    stroke-current stroke-2 opacity-90 group-hover:fill-transparent 
+    @apply inline-block h-6 w-6 scale-125 fill-transparent
+    stroke-current stroke-2 opacity-90 group-hover:fill-transparent
     sm:scale-110;
   }
   .prose {
-    @apply prose-headings:!mb-3 prose-headings:!text-skin-base 
-    prose-h3:italic prose-p:!text-skin-base 
+    @apply prose-headings:!mb-3 prose-headings:!text-skin-base
+    prose-h3:italic prose-p:!text-skin-base
     prose-a:!text-skin-base prose-a:!decoration-dashed prose-a:underline-offset-8
     hover:prose-a:text-skin-accent prose-blockquote:!border-l-skin-accent
     prose-blockquote:border-opacity-50 prose-blockquote:opacity-80
     prose-figcaption:!text-skin-base prose-figcaption:opacity-70
     prose-strong:!text-skin-base
 
-    
-    prose-code:rounded prose-code:bg-skin-card 
-    prose-code:bg-opacity-75 prose-code:p-1 prose-code:!text-skin-base 
+
+    prose-code:rounded prose-code:bg-skin-card
+    prose-code:bg-opacity-75 prose-code:p-1 prose-code:!text-skin-base
     prose-code:before:!content-[''] prose-code:after:!content-['']
-    prose-pre:!text-skin-base prose-ol:!text-skin-base 
+    prose-pre:!text-skin-base prose-ol:!text-skin-base
     prose-ul:overflow-x-clip prose-ul:!text-skin-base prose-li:marker:!text-skin-accent
     prose-table:text-skin-base prose-th:border
-    prose-th:border-skin-line prose-td:border 
-    prose-td:border-skin-line prose-img:mx-auto 
-    prose-img:!mt-2 prose-img:border-2 
+    prose-th:border-skin-line prose-td:border
+    prose-td:border-skin-line prose-img:mx-auto
+    prose-img:!mt-2 prose-img:border-2
     prose-img:border-skin-line prose-hr:!border-skin-line;
   }
   .prose a {
@@ -114,6 +114,48 @@
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-skin-card-muted;
   }
+
+  /* ~~~~~ My styles ~~~~~ */
+
+  /* ===== tags ===== */
+  ul.tags-container li.tag a {
+    @apply relative underline decoration-dashed hover:-top-0.5 hover:text-skin-accent focus-visible:p-1;
+  }
+  ul.tags-container li.tag a svg {
+    @apply -mr-5 h-6 w-6 text-skin-base opacity-80 group-hover:fill-skin-accent;
+  }
+
+  /* ===== TailwindCSS Typography customization ===== */
+  .prose blockquote p:first-of-type::before {
+    content: "";
+  }
+  .prose blockquote p:last-of-type::after {
+    content: "";
+  }
+
+  /* ===== remark-wiki-link customization ===== */
+  .prose a.internal::before {
+    content: "[[";
+  }
+  .prose a.internal::after {
+    content: "]]";
+  }
+
+  /* ===== rehype-toc customization ===== */
+  .prose nav.toc ol.toc-level-1 {
+    list-style-type: "\25FC  ";
+  }
+  .prose nav.toc ol:not(.toc-level-1) {
+    list-style-type: "\25FB  ";
+  }
+  .prose nav.toc li.toc-item {
+    @apply my-1;
+  }
+  .prose nav.toc ol:not(.toc-level-1) {
+    @apply my-1;
+  }
+
+  /* ~~~~~ My styles end ~~~~~ */
 }
 
 @layer components {

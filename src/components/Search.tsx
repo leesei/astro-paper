@@ -1,13 +1,13 @@
-import Fuse from "fuse.js";
 import { useEffect, useRef, useState } from "react";
 import Card from "@components/Card";
-import slugify from "@utils/slugify";
-import type { BlogFrontmatter } from "@content/_schemas";
+import Fuse from "fuse.js";
+import type { PostFrontmatter } from "@content/_schemas";
 
 export type SearchItem = {
+  slug: string;
   title: string;
   description: string;
-  data: BlogFrontmatter;
+  data: PostFrontmatter;
 };
 
 interface Props {
@@ -31,7 +31,7 @@ export default function SearchBar({ searchList }: Props) {
   };
 
   const fuse = new Fuse(searchList, {
-    keys: ["title", "description"],
+    keys: ["slug", "title", "description"],
     includeMatches: true,
     minMatchCharLength: 2,
     threshold: 0.5,
@@ -78,9 +78,9 @@ export default function SearchBar({ searchList }: Props) {
           </svg>
         </span>
         <input
-          className="block w-full rounded border border-skin-fill 
+          className="block w-full rounded border border-skin-fill
         border-opacity-40 bg-skin-fill py-3 pl-10
-        pr-3 placeholder:italic placeholder:text-opacity-75 
+        pr-3 placeholder:italic placeholder:text-opacity-75
         focus:border-skin-accent focus:outline-none"
           placeholder="Search for anything..."
           type="text"
@@ -107,9 +107,9 @@ export default function SearchBar({ searchList }: Props) {
         {searchResults &&
           searchResults.map(({ item, refIndex }) => (
             <Card
-              href={`/posts/${slugify(item.data)}`}
+              href={`/posts/${item.slug}`}
               frontmatter={item.data}
-              key={`${refIndex}-${slugify(item.data)}`}
+              key={`${refIndex}-${item.slug}`}
             />
           ))}
       </ul>
