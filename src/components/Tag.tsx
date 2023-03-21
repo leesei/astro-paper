@@ -1,5 +1,5 @@
 import { slugify } from "@utils/slugify";
-import { RiHashtag } from "react-icons/ri";
+import { RiHashtag } from "react-icons/ri/index";
 
 interface Props {
   name: string;

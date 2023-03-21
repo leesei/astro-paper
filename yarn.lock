@@ -4719,10 +4719,10 @@ react-dom@^18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
-react-icons@^4.8.0:
-  version "4.8.0"
-  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.8.0.tgz#621e900caa23b912f737e41be57f27f6b2bff445"
-  integrity sha512-N6+kOLcihDiAnj5Czu637waJqSnwlMNROzVZMhfX68V/9bu9qHaMIJC4UdozWoOk57gahFCNHwVvWzm0MTzRjg==
+react-icons@^4.8.1-snapshot.1:
+  version "4.8.1-snapshot.1"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.8.1-snapshot.1.tgz#978a3d8b5948de770ff442038e862529ecc7fe61"
+  integrity sha512-ibe3enpOkR3VVeQiP4p/n+8GIrcrwE+dmkvNlP2XXYT84LlKfSSczdZeBb4hhp/B/4VIRUdaWuLCCOKngZbwqw==
 
 react@^18.2.0:
   version "18.2.0"
